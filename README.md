@@ -1,4 +1,4 @@
-q# Community Learning Hub
+Community Learning Hub
 
 A web application for a Community Learning Hub, allowing users to browse and enrol in courses, and allowing organisers to manage courses, participants, and user accounts.
 
