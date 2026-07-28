@@ -1,4 +1,4 @@
-# Community Learning Hub
+q# Community Learning Hub
 
 A web application for a Community Learning Hub, allowing users to browse and enrol in courses, and allowing organisers to manage courses, participants, and user accounts.
 
@@ -16,7 +16,7 @@ https://community-learning-hub-20tz.onrender.com
 ### Setup
 1. Clone the repository:
    ```
-   git clone https://github.com/YOUR_USERNAME/community-learning-hub.git
+   git clone https://github.com/gakjee/community-learning-hub.git
    cd community-learning-hub
    ```
 2. Install dependencies:
