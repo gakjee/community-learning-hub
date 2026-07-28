@@ -1,6 +1,7 @@
 import express from "express";
 import { getParticipantsForCourse } from "../models/bookingModel.js";
 import { getAllUsers, deleteUser, updateUserRole } from "../models/userModel.js";
+import { addCourse } from "../models/courseModel.js";
 import {
   addCourse,
   updateCourse,
