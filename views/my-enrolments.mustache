@@ -1,0 +1,15 @@
+<h1>My Enrolments</h1>
+{{^courses.length}}<p>You haven't enrolled in any courses yet.</p>{{/courses.length}}
+{{#courses}}
+<div>
+  <h2>{{name}}</h2>
+  <p>{{description}}</p>
+  <p><strong>Starts:</strong> {{startDate}} at {{startTime}} — {{location}}</p>
+  <form method="post" action="/user/unenrol">
+    <input type="hidden" name="bookingId" value="{{bookingId}}">
+    <button type="submit">Cancel enrolment</button>
+  </form>
+</div>
+<hr>
+{{/courses}}
+<a href="/user/dashboard">Back to dashboard</a>

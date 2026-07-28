@@ -1,0 +1,250 @@
+:root {
+  --ink: #21303F;
+  --paper: #FBF7F0;
+  --paper-alt: #F2ECDD;
+  --accent: #C98A2C;
+  --accent-deep: #8C5A1D;
+  --teal: #2F6F62;
+  --line: #E4DCC8;
+  --danger: #B3452C;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Work Sans', Arial, sans-serif;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+h1, h2, h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.15;
+}
+
+a { color: var(--teal); }
+a:hover { color: var(--accent-deep); }
+
+/* ---------- Header ---------- */
+header {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 1.1rem 2rem 0.9rem;
+}
+
+.site-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.site-title a {
+  color: var(--paper);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hub-mark circle { fill: var(--accent); }
+.hub-mark line { stroke: var(--paper); stroke-width: 1.5; opacity: 0.6; }
+
+nav {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.3rem;
+  align-items: center;
+}
+
+nav a, nav button {
+  color: var(--paper);
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.9;
+}
+
+nav a:hover, nav button:hover {
+  opacity: 1;
+  text-decoration: underline;
+  color: var(--paper);
+}
+
+/* ---------- Layout ---------- */
+main.container {
+  max-width: 960px;
+  margin: 2.2rem auto;
+  background: white;
+  padding: 2.2rem 2.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: #8a8375;
+  font-size: 0.85rem;
+}
+
+/* ---------- Hero (home page) ---------- */
+.hero {
+  padding: 0.5rem 0 1.8rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1.8rem;
+}
+
+.hero h1 {
+  font-size: 2.3rem;
+  max-width: 24ch;
+}
+
+.hero p {
+  max-width: 55ch;
+  color: #45524E;
+  font-size: 1.05rem;
+}
+
+.category-row {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-top: 1.6rem;
+}
+
+.category-card {
+  flex: 1 1 160px;
+  background: var(--paper-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.1rem 1rem;
+}
+
+.category-card svg { width: 28px; height: 28px; }
+.category-card h3 { font-size: 1rem; margin: 0.6rem 0 0.2rem; }
+.category-card p { font-size: 0.88rem; color: #5a6460; margin: 0; }
+
+/* ---------- Course cards ---------- */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.1rem;
+}
+
+.course-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  background: var(--paper);
+}
+
+.course-card h2 {
+  font-size: 1.2rem;
+  margin: 0 0 0.4rem;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--accent);
+  color: white;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+}
+
+.badge.weekly { background: var(--teal); }
+
+.course-meta {
+  font-size: 0.88rem;
+  color: #55605C;
+  margin: 0.2rem 0;
+}
+
+.course-price {
+  font-family: 'Fraunces', serif;
+  font-size: 1.15rem;
+  color: var(--accent-deep);
+  margin-top: 0.6rem;
+}
+
+/* ---------- Forms ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  padding: 0.65rem 0.7rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  background: var(--paper-alt);
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+}
+
+form { margin: 0.4rem 0; }
+
+label {
+  display: block;
+  margin-bottom: 0.9rem;
+  font-size: 0.92rem;
+}
+
+input, textarea, select {
+  padding: 0.5rem 0.6rem;
+  width: 100%;
+  max-width: 420px;
+  margin-top: 0.3rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: white;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--teal);
+  outline-offset: 1px;
+}
+
+button {
+  padding: 0.55rem 1.1rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.92rem;
+}
+
+button:hover { background: var(--accent-deep); }
+button:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+
+@media (max-width: 640px) {
+  main.container { padding: 1.4rem; margin: 1rem; }
+  header { padding: 1rem 1.2rem; }
+}

@@ -1,0 +1,13 @@
+<h1>Participants: {{course.name}}</h1>
+<p>{{course.startDate}} at {{course.startTime}} — {{course.location}}</p>
+
+{{^participants.length}}<p>No one has enrolled yet.</p>{{/participants.length}}
+
+<table border="1" cellpadding="6">
+  <tr><th>#</th><th>Username</th></tr>
+  {{#participants}}
+  <tr><td>{{bookingId}}</td><td>{{username}}</td></tr>
+  {{/participants}}
+</table>
+
+<a href="/admin">Back to Admin Dashboard</a>

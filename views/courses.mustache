@@ -1,2 +1,20 @@
-<h1>Courses</h1>
-{{#courses}}<div><h2>{{name}}</h2><p>{{description}}</p><p>£{{price}}</p></div>{{/courses}}
+<h1>Current &amp; Upcoming Courses</h1>
+
+{{^courses.length}}<p>No courses are available right now — please check back soon.</p>{{/courses.length}}
+
+<div class="course-grid">
+{{#courses}}
+  <div class="course-card">
+    <span class="badge {{courseType}}">{{courseType}}</span>
+    <h2>{{name}}</h2>
+    <p>{{description}}</p>
+    <p class="course-meta">{{numSessions}} session(s) &middot; {{duration}}</p>
+    <p class="course-meta">Starts {{startDate}} at {{startTime}}</p>
+    <p class="course-meta">📍 {{location}}</p>
+    <p class="course-price">£{{price}}</p>
+    <form method="post" action="/user/enrol/{{_id}}">
+      <button type="submit">Enrol</button>
+    </form>
+  </div>
+{{/courses}}
+</div>

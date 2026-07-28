@@ -1,0 +1,18 @@
+<h1>{{#course}}Edit Course{{/course}}{{^course}}Add New Course{{/course}}</h1>
+<form method="post" action="{{formAction}}">
+  <label>Course name: <input name="name" value="{{course.name}}" required></label><br>
+  <label>Description: <textarea name="description">{{course.description}}</textarea></label><br>
+  <label>Type:
+    <select name="courseType">
+      <option value="single" {{#course.courseType}}{{#course.courseType.single}}selected{{/course.courseType.single}}{{/course.courseType}}>Single event</option>
+      <option value="weekly">Weekly class</option>
+    </select>
+  </label><br>
+  <label>Number of sessions: <input type="number" name="numSessions" value="{{course.numSessions}}" required></label><br>
+  <label>Duration per session (e.g. "1 hour"): <input name="duration" value="{{course.duration}}" required></label><br>
+  <label>Start date: <input type="date" name="startDate" value="{{course.startDate}}" required></label><br>
+  <label>Start time: <input type="time" name="startTime" value="{{course.startTime}}" required></label><br>
+  <label>Location: <input name="location" value="{{course.location}}" required></label><br>
+  <label>Price (£): <input type="number" step="0.01" name="price" value="{{course.price}}" required></label><br>
+  <button type="submit">Save</button>
+</form>

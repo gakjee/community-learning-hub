@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Community Learning Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <p class="site-title">
+      <a href="/">
+        <svg class="hub-mark" width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+          <line x1="13" y1="13" x2="4" y2="6"></line>
+          <line x1="13" y1="13" x2="22" y2="6"></line>
+          <line x1="13" y1="13" x2="4" y2="20"></line>
+          <line x1="13" y1="13" x2="22" y2="20"></line>
+          <circle cx="13" cy="13" r="4"></circle>
+          <circle cx="4" cy="6" r="2.5"></circle>
+          <circle cx="22" cy="6" r="2.5"></circle>
+          <circle cx="4" cy="20" r="2.5"></circle>
+          <circle cx="22" cy="20" r="2.5"></circle>
+        </svg>
+        Community Learning Hub
+      </a>
+    </p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/courses">Courses</a>
+      {{#user}}
+        <a href="/user/dashboard">Dashboard</a>
+        <a href="/user/my-enrolments">My Enrolments</a>
+        {{#isAdmin}}<a href="/admin">Admin</a>{{/isAdmin}}
+        <form method="post" action="/user/logout" style="display:inline"><button type="submit">Logout</button></form>
+      {{/user}}
+      {{^user}}
+        <a href="/login">Login</a>
+        <a href="/user/register">Register</a>
+      {{/user}}
+    </nav>
+  </header>
+  <main class="container">
+    {{{body}}}
+  </main>
+  <footer><p>&copy; 2026 Community Learning Hub</p></footer>
+</body>
+</html>

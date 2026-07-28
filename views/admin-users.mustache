@@ -1,0 +1,22 @@
+<h1>User Management</h1>
+<table border="1" cellpadding="6">
+  <tr><th>Username</th><th>Role</th><th>Actions</th></tr>
+  {{#users}}
+  <tr>
+    <td>{{username}}</td>
+    <td>{{role}}</td>
+    <td>
+      <form method="post" action="/admin/users/toggle-role" style="display:inline">
+        <input type="hidden" name="id" value="{{_id}}">
+        <input type="hidden" name="currentRole" value="{{role}}">
+        <button type="submit">Toggle Admin/User</button>
+      </form>
+      <form method="post" action="/admin/users/delete" style="display:inline">
+        <input type="hidden" name="id" value="{{_id}}">
+        <button type="submit" onclick="return confirm('Delete this user?')">Delete</button>
+      </form>
+    </td>
+  </tr>
+  {{/users}}
+</table>
+<a href="/admin">Back to Admin Dashboard</a>

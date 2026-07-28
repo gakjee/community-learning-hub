@@ -1,0 +1,28 @@
+<h1>Admin Dashboard</h1>
+<a href="/admin/add-course">Add New Course</a> | <a href="/admin/users">Manage Users</a>
+<table border="1" cellpadding="6">
+  <tr>
+    <th>Name</th><th>Type</th><th>Sessions</th><th>Duration</th>
+    <th>Start Date</th><th>Start Time</th><th>Location</th><th>Price</th><th>Actions</th>
+  </tr>
+  {{#courses}}
+  <tr>
+    <td>{{name}}</td>
+    <td>{{courseType}}</td>
+    <td>{{numSessions}}</td>
+    <td>{{duration}}</td>
+    <td>{{startDate}}</td>
+    <td>{{startTime}}</td>
+    <td>{{location}}</td>
+    <td>£{{price}}</td>
+<td>
+      <a href="/admin/edit-course/{{_id}}">Edit</a>
+      <a href="/admin/participants/{{_id}}">Participants</a>
+      <form method="post" action="/admin/delete-course" style="display:inline">
+        <input type="hidden" name="id" value="{{_id}}">
+        <button type="submit">Delete</button>
+      </form>
+    </td>
+  </tr>
+  {{/courses}}
+</table>
